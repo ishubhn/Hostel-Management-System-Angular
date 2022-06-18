@@ -1,0 +1,125 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #005555;">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Akhil PG</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#features">Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+			</ul>
+			<form class="d-flex">
+				<a class="nav-link text-light" href="#">Sign In</a>
+				<a class="btn btn-outline-success text-light" href="#">Register</a>
+			</form>
+		</div>
+	</div>
+</nav>
+
+<!-- Main Page -->
+<section id="welcome">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<img src="assets/friends.png" alt="friends" width="580px" height="620px">
+			</div>
+			<div class="col heading">
+				Welcome to Akhil PG!
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="features">
+	<div class="row">
+		<div class="col-lg-4 icon-set">
+			<!-- Font Awesome Icons for Free icons -->
+			<fa-icon [icon]="faWifi" class="fa-4x icons"></fa-icon>
+			<h3 class="h3-title">Free Internet</h3>
+			<p class="feature-p">You got High Speed Internet</p>
+		</div>
+		<div class="col-lg-4 icon-set">
+			<fa-icon [icon]="faBowlFood" class="fa-4x icons"></fa-icon>
+			<h3 class="h3-title">Hot & Delicious Meals</h3>
+			<p class="feature-p">Covers delicious breakfast, lunch and dinner</p>
+		</div>
+		<div class="col-lg-4 icon-set">
+			<fa-icon [icon]="faSink" class="fa-4x icons"></fa-icon>
+			<h3 class="h3-title">Attached Washroom</h3>
+			<p class="feature-p">Attached toilet and bathroom to each individual room</p>
+		</div>
+	</div>
+</section>
+
+<section id="pricing">
+	<div class="container">
+		<h2>A Plan for Everyone's need</h2>
+		<p>Simple and affordable price plans for you.</p>
+		<div class="row">
+			<div class="pricing-column col-lg-4 col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h3>Single Sharing</h3>
+					</div>
+					<div class="card-body">
+						<h2>₹ 11000 / mo</h2>
+						<p>Single Bed in room</p>
+						<p>Deposit ₹ 2000/-</p>
+						<div class="d-grid gap-2">
+							<button type="button" class="btn btn-price">Sign Up</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pricing-column col-lg-4 col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h3>Double Sharing</h3>
+					</div>
+					<div class="card-body">
+						<h2>₹7000 / mo</h2>
+						<p>Double Bed in room</p>
+						<p>Deposit ₹ 2000/-</p>
+						<div class="d-grid gap-2">
+							<button type="button" class="btn btn-price">Sign Up</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pricing-column col-lg-4">
+				<div class="card">
+					<div class="card-header">
+						<h3>Triple Sharing</h3>
+					</div>
+					<div class="card-body">
+						<h2>₹6000 / mo</h2>
+						<p>Triple Bed in room</p>
+						<p>Deposit ₹ 2000/-</p>
+						<div class="d-grid gap-2">
+							<button type="button" class="btn btn-price">Sign Up</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="footer-logos">
+		<fa-icon [icon]="faTwitter" class="social-icons"></fa-icon>
+		<!-- <i class="social-icons fab fa-facebook-f"></i> -->
+		<fa-icon [icon]="faFb" class="social-icons"></fa-icon>
+		<fa-icon [icon]="faInsta" class="social-icons"></fa-icon>
+		<fa-icon [icon]="faEnv" class="social-icons"></fa-icon>
+	</div>
+	<p class="footer-p">© Shubham Nagre</p>
+</footer>
