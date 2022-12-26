@@ -1,1 +1,44 @@
-<p>login works!</p>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<!-- Login Page -->
+<section id="login-page">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-lg-7">
+				<form>
+					<div class="m-5 p-5">
+						<div class="card text-center">
+							<div class="text-center card-header headerBody">
+								<h1 class="b-4 display-6"><strong>Please Sign in</strong></h1>
+							</div>
+							<div class="card-body mx-5">
+								<div class="form-floating my-4">
+									<input type="email" class="form-control rounded-pill" id="floatingInput"
+										placeholder="name@example.com">
+									<label for="floatingInput">Email address</label>
+								</div>
+								<div class="form-floating mb-4">
+									<input type="password" class="form-control rounded-pill" id="floatingPassword"
+										placeholder="Password">
+									<label for="floatingPassword">Password</label>
+								</div>
+								<div class="d-grid col-5 mx-auto">
+									<button class="btn rounded-pill" id="loginBtn" type="submit"><strong>Sign
+											In</strong></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col col-lg-5 message">
+				<strong>New here?</strong>
+				<p>Let's find a cozy accommodation for you!</p>
+				<div class="d-grid col-4 mx-auto">
+					<button class="btn btn-primary rounded-pill" id="signUpBtn" type="button">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
