@@ -9,9 +9,9 @@ import { environment } from './../../environments/environment';
 })
 export class UserAuthService {
 
-  private REST_SERVICE_URL = environment.restServiceURL;
+ 	private REST_SERVICE_URL = environment.restServiceURL;
 
-  constructor(private httpc: HttpClient) { }
+    constructor(private httpc: HttpClient) { }
 
 	loginUser = (user: LoginUser) => {
 		return this.httpc.post<LoginUser>(`${this.REST_SERVICE_URL}/users/login`, user);
