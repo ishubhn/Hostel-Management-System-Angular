@@ -1,0 +1,16 @@
+/* Footer section */
+#footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 7% 15%;
+}
+
+.social-icons {
+    margin: 30px 15px;
+}
+
+.footer-p {
+    margin: 30px;
+    /* font-style: monospace; */
+    color: #8f8f8f;
+}
