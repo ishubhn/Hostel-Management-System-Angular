@@ -29,7 +29,8 @@ input {
     color: #ffffff;
 }
 
-.card, .headerBody {
+.card,
+.headerBody {
     border: none;
 }
 
@@ -44,7 +45,9 @@ input {
 }
 
 .message {
-    background-color: #007563c4;
+    /* background-color: #007563c4; */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(0, 117, 99, 1) 35%, rgba(0, 212, 255, 1) 100%);
     color: #ffffff;
     font-family: 'Mulish', sans-serif;
     align-self: center;

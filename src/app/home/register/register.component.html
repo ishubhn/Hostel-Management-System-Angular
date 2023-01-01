@@ -1,1 +1,112 @@
-<p>register works!</p>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<!-- Login Page -->
+<section id="login-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-lg-5 message">
+                <strong>Welcome Back!</strong>
+                <p>Your room missed you!</p>
+                <div class="d-grid col-4 mx-auto">
+                    <button class="btn btn-primary rounded-pill" id="loginBtn" type="button">Sign In</button>
+                </div>
+            </div>
+            <div class="col col-lg-7">
+                <!-- Form Start -->
+                <form name="form" #f="ngForm" (ngSubmit)="registerUser(f)">
+                    <div class="m-5">
+                        <div class="card text-center">
+                            <div class="text-center card-header headerBody">
+                                <h1 class="b-4 display-6"><strong>Create Account</strong></h1>
+                            </div>
+                            <div class="card-body mx-5">
+                                <div class="row mt-4 mb-2 gx-4">
+                                    <!-- First Name -->
+                                    <div class="col-6 labels">
+                                        <input type="text" class="form-control rounded-pill" name="firstName" ngModel
+                                            #firstName="ngModel" id="userFirstName" placeholder="First Name" required>
+                                    </div>
+                                    <!-- Last Name -->
+                                    <div class="col-6 labels">
+                                        <input type="text" class="form-control rounded-pill" name="lastName" ngModel
+                                            #lastName="ngModel" id="userLastName" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+                                <div class="row my-4 gx-4">
+                                    <!-- Email -->
+                                    <div class="col-6 labels">
+                                        <input type="email" class="form-control rounded-pill" name="email" ngModel
+                                            #email="ngModel" id="userEmail" placeholder="Email Id" required email>
+                                    </div>
+                                    <!-- Phone Number -->
+                                    <div class="col-6 labels">
+                                        <input type="text" class="form-control rounded-pill" name="phoneNumber" ngModel
+                                            #phoneNumber="ngModel" id="userPhoneNumber" maxlength="10"
+                                            placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+                                <div class="row my-4 gx-4">
+                                    <!-- Gender -->
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-auto mt-2 ms-2">
+                                                <span class="me-2 form-label">Gender:</span>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="radioGender"
+                                                        ngModel #radioGender="ngModel" value="male" id="male">
+                                                    <label class="form-check-label" for="male">Male</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="radioGender"
+                                                        ngModel #radioGender="ngModel" id="female" value="female">
+                                                    <label class="form-check-label" for="female">Female</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Date of Birth -->
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <input class="form-control rounded-pill" placeholder="Date of birth"
+                                                name="dateOfBirth" ngModel #c="ngModel" ngbDatepicker
+                                                #dateOfBirth="ngbDatepicker" />
+                                            <span class="input-group-append">
+                                                <button class="btn rounded-pill border-0 ml-n5"
+                                                    (click)="dateOfBirth.toggle()" type="button">
+                                                    <fa-icon [icon]="faCalendar"></fa-icon>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4 gx-4">
+                                    <!-- Password -->
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control rounded-pill" name="password"
+                                            ngModel #password="ngModel"
+                                            id="inputPassword" placeholder="Password"
+                                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!#%*?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                                            min="8" required>
+                                    </div>
+                                    <!-- Confirm Password -->
+                                    <div class="col-md-6">
+                                        <input type="password" class="form-control rounded-pill" name="confirmPassword"
+                                            ngModel #confirmPassword="ngModel"
+                                            id="inputPasswordConfirm"
+                                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!#%*?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                                            placeholder="Confirm Password" min="8" required>
+                                    </div>
+                                </div>
+                                <div class="d-grid col-5 mx-auto">
+                                    <button class="btn rounded-pill" id="signUpBtn" type="submit" [disabled]="!f.valid"><strong>Sign
+                                            Up</strong></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

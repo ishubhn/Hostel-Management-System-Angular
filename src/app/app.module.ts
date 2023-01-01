@@ -12,6 +12,7 @@ import { NavbarComponent } from './sections/navbar/navbar.component';
 import { FooterComponent } from './sections/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './dashboard/user/user.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserComponent } from './dashboard/user/user.component';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]
