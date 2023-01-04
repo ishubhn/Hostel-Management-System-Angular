@@ -33,6 +33,7 @@ export class LoginComponent {
 			(res) => {
 				console.log("Login Successful");
 				this.wait(1500);
+				this.router.navigate(['/user'])
 			},
 			(err) => {
 				console.error(err);

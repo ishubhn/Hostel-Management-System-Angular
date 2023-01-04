@@ -1,9 +1,9 @@
+import { Router } from '@angular/router';
+import { UserAuthService } from './../../service/user-auth.service';
 import { Component, ViewChild } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, NgForm } from '@angular/forms';
 import { User } from './../../interface/user';
-import { Address } from '../../interface/address';
-import { JsonPipe } from '@angular/common';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -17,21 +17,33 @@ export class RegisterComponent {
 	registerForm !: NgForm;
 
 	model: NgbDateStruct;
+	errorMessage: any;
 	equalPassword: boolean = true;
+	isUserRegisterSuccess: boolean = false;
+
 	faCalendar = faCalendar;
 
 	user: User = {
 		firstName: '',
 		lastName: '',
-		email: '',
+		emailId: '',
 		phoneNumber: '',
 		gender: '',
 		dateOfBirth: '',
 		password: '',
-		address: ''
+		permanentAddress: {
+			blockNo: '',
+			address: '',
+			landmark: '',
+			cityName: '',
+			state: '',
+			country: ''
+		}
 	};
 
-	constructor() { }
+	constructor(private service: UserAuthService, private router: Router) {
+
+	}
 
 	// parse date as per dd/mm/yyyy
 	parseDate(dateBirth: any) {
@@ -56,13 +68,38 @@ export class RegisterComponent {
 	registerUser = (registerForm: NgForm) => {
 		this.user.firstName = this.registerForm.value.firstName;
 		this.user.lastName = this.registerForm.value.lastName;
-		this.user.email = (this.registerForm.value.email).toLowerCase();
+		this.user.emailId = (this.registerForm.value.email).toLowerCase();
 		this.user.phoneNumber = this.registerForm.value.phoneNumber;
-		this.user.gender = this.registerForm.value.gender;
+		this.user.gender = this.registerForm.value.radioGender;
 		this.user.dateOfBirth = this.parseDate(this.registerForm.value.dateOfBirth);
 
-		console.log(registerForm);
-		
+		// console.log(registerForm.value);
+
+		if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
+			console.log("Password Matched");
+			this.user.password = this.registerForm.value.password;
+			console.log(this.user);
+
+			// Service API call
+			this.service.registerUser(this.user).subscribe(
+				res => {
+					console.log(res);
+					this.isUserRegisterSuccess = true;
+					this.router.navigate(['/login']);
+				},
+				(err) => {
+					this.errorMessage = err.error.message;
+					console.error(this.errorMessage);
+					this.isUserRegisterSuccess = false;
+				}
+			)
+			this.registerForm.reset();
+		} 
+		else {
+			this.equalPassword = false;
+			console.error("Password Mismatch");
+		}
+
 	}
 
 

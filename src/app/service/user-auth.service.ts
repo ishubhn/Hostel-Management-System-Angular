@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { LoginUser } from './../interface/login-user';
+import { User } from './../interface/user';
 import { environment } from './../../environments/environment';
 
 @Injectable({
@@ -15,5 +16,9 @@ export class UserAuthService {
 
 	loginUser = (user: LoginUser) => {
 		return this.httpc.post<LoginUser>(`${this.REST_SERVICE_URL}/users/login`, user);
+	}
+
+	registerUser = (user: User) => {
+		return this.httpc.post<User>(`${this.REST_SERVICE_URL}/users/register`, user);
 	}
 }
